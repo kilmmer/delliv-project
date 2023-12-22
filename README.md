@@ -18,7 +18,7 @@ Aplique o conceito de Atomic Design na estruturação dos componentes do fronten
 Desenvolva testes unitários para as principais funcionalidades do aplicativo, tanto no frontend quanto no backend.
 Tarefas:
 
-- 1. Configure o ambiente de desenvolvimento:
+* 1. Configure o ambiente de desenvolvimento:
 
 Configure um projeto React com Redux e TypeScript.
 Configure o NestJS com Prisma para o backend.
