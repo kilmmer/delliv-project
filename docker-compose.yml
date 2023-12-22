@@ -1,0 +1,54 @@
+version: "3.8"
+
+networks:
+  mynet:
+    driver: bridge
+
+services:
+  backend:
+    build:
+      context: ./backend-delliv
+    image: node:latest
+    container_name: backend-delliv
+    working_dir: /app/backend-delliv
+    volumes:
+      - ./backend:/app/backend-delliv
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:postgres1q2w3e@postgres:5432/delliv?schema=public
+    depends_on:
+      - postgres
+    command: "npm start"
+    networks:
+      - mynet
+
+  frontend:
+    image: node:latest
+    container_name: frontend-delliv
+    working_dir: /app/frontend-delliv
+    volumes:
+      - ./frontend:/app/frontend-delliv
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    command: npm start
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres-delliv
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres1q2w3e
+      POSTGRES_DB: delliv
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql-delliv/data
+    networks:
+      - mynet
+
+volumes:
+  postgres_data:
