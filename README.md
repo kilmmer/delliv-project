@@ -18,19 +18,19 @@ Aplique o conceito de Atomic Design na estruturação dos componentes do fronten
 Desenvolva testes unitários para as principais funcionalidades do aplicativo, tanto no frontend quanto no backend.
 Tarefas:
 
-# 1. Configure o ambiente de desenvolvimento:
+- 1. Configure o ambiente de desenvolvimento:
 
 Configure um projeto React com Redux e TypeScript.
 Configure o NestJS com Prisma para o backend.
 Configure o Docker para executar o aplicativo.
 
-# 2. Crie o modelo de dados:
+- 2. Crie o modelo de dados:
 
 Defina um modelo de dados para representar um pedido com as seguintes informações: ID, nome do cliente, endereço de entrega, status do pedido.
 Use o Prisma para criar a migração e gerar a tabela correspondente no banco de dados PostgreSQL.
 Defina um modelo de dados para representar um usuário, incluindo informações como ID, nome, e-mail e senha criptografada.
 
-#3. Implemente o backend:
+- 3. Implemente o backend:
 
 Crie um controlador em NestJS para manipular as requisições relacionadas aos pedidos.
 Implemente os endpoints para obter a lista de pedidos e atualizar o status de um pedido.
@@ -39,7 +39,7 @@ Use o Prisma para realizar as operações de leitura e escrita no banco de dados
 Implemente a funcionalidade de autenticação de usuário, gerando tokens de acesso seguro.
 Desenvolva os middlewares necessários para autorização de rotas protegidas.
 
-# 4.Implemente o frontend:
+- 4. Implemente o frontend:
 
 Crie uma estrutura de componentes baseada no conceito de Atomic Design, dividindo a interface em átomos, moléculas, organismos e templates.
 Desenvolva uma página de login que permita aos usuários autenticarem-se fornecendo suas credenciais.
@@ -48,19 +48,19 @@ Desenvolva uma página inicial que exiba a lista de pedidos, mostrando o nome do
 Implemente um componente de atualização de status para cada pedido na lista. O componente deve permitir a seleção de um novo status e a atualização do pedido quando o usuário confirmar a alteração.
 Use Redux para gerenciar o estado do aplicativo e fazer as chamadas de API para autenticação de usuário, obtenção e atualização dos pedidos.
 
-# 5. Crie testes unitários:
+- 5. Crie testes unitários:
 
 Desenvolva testes unitários para as principais funcionalidades do aplicativo, tanto no frontend quanto no backend.
 Utilize ferramentas como Jest para testes no React e NestJS.
 Certifique-se de testar as funcionalidades principais, como autenticação do usuário, obtenção e atualização dos pedidos, entre outras.
 Busque obter uma cobertura de testes adequada, testando diversos cenários.
 
-# 6. Crie um arquivo Dockerfile:
+- 6. Crie um arquivo Dockerfile:
 
 Crie um arquivo Dockerfile para empacotar o aplicativo React.
 Configure o Dockerfile para copiar os arquivos de build do aplicativo React para o contêiner e iniciar o servidor da aplicação.
 
-# 7. Crie um arquivo docker-compose.yml:
+- 7. Crie um arquivo docker-compose.yml:
 
 Crie um arquivo docker-compose.yml para definir e executar os serviços necessários, como o aplicativo React, o servidor NestJS e o banco de dados PostgreSQL.
 Recomendações:
