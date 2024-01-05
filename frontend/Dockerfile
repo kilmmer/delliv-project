@@ -1,13 +1,13 @@
 # Use a imagem oficial do Node.js como base
-FROM node:20-alpine
+FROM node:20
 
 # Defina o diretório de trabalho no contêiner
-WORKDIR /app/frontend
+WORKDIR /app/frontend-delliv
 
 # Copie o package.json e o yarn.lock para o contêiner
 COPY package*.json ./
 
-RUN chmod 777 /app/frontend
+RUN chmod 777 /app/frontend-delliv
 
 # Instale as dependências
 RUN npm install
@@ -22,4 +22,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Comando para iniciar o aplicativo
-CMD ["npm", "start"]
+CMD ["vite"]

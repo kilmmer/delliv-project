@@ -1,7 +1,7 @@
-FROM node:20-alpine
+FROM node:20
 
 # Defina o diretório de trabalho no contêiner
-WORKDIR /app/backend
+WORKDIR /app/backend-delliv
 
 # Copie o package.json e o yarn.lock para o contêiner
 COPY package*.json ./
@@ -18,7 +18,7 @@ EXPOSE 4000
 
 ENV DATABASE_URL="postgresql://postgres:postgres1q2w3e@postgres:5432/delliv?schema=public"
 
-RUN chmod 755 /app/backend
+RUN chmod 755 /app/backend-delliv
 RUN npm install -g prisma
 
 RUN npx prisma generate

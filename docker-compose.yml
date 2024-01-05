@@ -8,13 +8,13 @@ services:
   backend:
     build:
       context: ./backend-delliv
-    image: node:latest
+    image: node:20
     container_name: backend-delliv
     working_dir: /app/backend-delliv
     volumes:
       - ./backend:/app/backend-delliv
     ports:
-      - "4000:4000"
+      - "3000:3000"
     environment:
       - NODE_ENV=development
       - DATABASE_URL=postgresql://postgres:postgres1q2w3e@postgres:5432/delliv?schema=public
@@ -25,16 +25,16 @@ services:
       - mynet
 
   frontend:
-    image: node:latest
+    image: node:20
     container_name: frontend-delliv
     working_dir: /app/frontend-delliv
     volumes:
       - ./frontend:/app/frontend-delliv
     ports:
-      - "3000:3000"
+      - "4000:4000"
     environment:
       - NODE_ENV=development
-    command: npm start
+    command: npm run dev
 
   postgres:
     image: postgres:latest
